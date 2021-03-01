@@ -27,7 +27,7 @@
         }
     },
     "suggest": {
-        "guzzlehttp/guzzle": "Required to use the Mailgun ding talk driver (^6.3.1|^7.0.1).",
+        "guzzlehttp/guzzle": "Required to use the Mailgun ding talk driver (^6.3.1|^7.0.1)."
     },
     "config": {
         "sort-packages": true
