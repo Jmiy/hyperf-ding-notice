@@ -2,6 +2,13 @@
     "name": "jmiy/ding-notice",
     "description": "a dingtalk robot message handle for send message",
     "keywords": ["hyperf", "ding talk", "ding notice"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jmiy",
+            "email": "751399695@qq.com"
+        }
+    ],
     "require": {
         "php": ">=7.0",
         "guzzlehttp/guzzle": "^6.2|^7.0"
@@ -23,16 +30,12 @@
             "DingNotice\\Tests\\": "tests"
         }
     },
+    "config": {
+        "sort-packages": true
+    },
     "extra": {
         "hyperf": {
             "config": "DingNotice\\ConfigProvider"
         }
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Jmiy",
-            "email": "751399695@qq.com"
-        }
-    ]
+    }
 }
