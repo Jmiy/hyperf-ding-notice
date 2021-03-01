@@ -1,0 +1,38 @@
+{
+    "name": "jmiy/ding-notice",
+    "description": "a dingtalk robot message handle for send message",
+    "keywords": ["hyperf", "ding talk", "ding notice"],
+    "require": {
+        "php": ">=7.0",
+        "guzzlehttp/guzzle": "^6.2|^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7",
+        "mockery/mockery": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "DingNotice\\": "src/"
+        },
+        "files": [
+            "src/Functions.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DingNotice\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "hyperf": {
+            "config": "DingNotice\\ConfigProvider"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jmiy",
+            "email": "751399695@qq.com"
+        }
+    ]
+}
