@@ -18,13 +18,13 @@ ding-notie 是一款钉钉机器人消息发送的Hyperf扩展，您可以通过
 
 # 要求
 - php版本:>=7.0
-- Hyperf版本: Hyperf2.1+
+- Hyperf版本: Hyperf 2.1+
 
 
 # 安装
 
 ```php
-composer require jmiy/ding-notice
+composer require jmiy/hyperf-ding-notice
 
 ```
 
@@ -43,11 +43,11 @@ $ding = new \DingNotice\DingTalk([
 $ding->text('我就是我, xxx 是不一样的烟火');
 ```
 
-# 在laravel项目中使用
+# 在Hyperf项目中使用
 
 安装成功后执行
 ```php
-php bin/hyperf.php vendor:publish jmiy/ding-notice
+php bin/hyperf.php vendor:publish jmiy/hyperf-ding-notice
 
 ```
 会自动将`ding.php`添加到您项目的配置文件当中
