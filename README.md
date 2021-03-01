@@ -14,21 +14,21 @@
 
 
 # 介绍
-ding-notie 是一款钉钉机器人消息发送的Laravel扩展，您可以通过此扩展便捷的发送钉钉消息，进行监控和提醒操作
+ding-notie 是一款钉钉机器人消息发送的Hyperf扩展，您可以通过此扩展便捷的发送钉钉消息，进行监控和提醒操作
 
 # 要求
 - php版本:>=7.0
-- laravel版本: Laravel5.5+
+- Hyperf版本: Hyperf2.1+
 
 
 # 安装
 
 ```php
-composer require wangju/ding-notice
+composer require jmiy/ding-notice
 
 ```
 
-# 在非laravel项目中使用
+# 在非Hyperf项目中使用
 ```php
 $ding = new \DingNotice\DingTalk([
     "default" => [
@@ -47,7 +47,7 @@ $ding->text('我就是我, xxx 是不一样的烟火');
 
 安装成功后执行
 ```php
-php artisan vendor:publish --provider="DingNotice\DingNoticeServiceProvider"
+php bin/hyperf.php vendor:publish jmiy/ding-notice
 
 ```
 会自动将`ding.php`添加到您项目的配置文件当中
