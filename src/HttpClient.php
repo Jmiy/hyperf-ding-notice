@@ -1,17 +1,18 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: wangju
- * Date: 2019-05-17
- * Time: 20:38
+ * User: Jmiy
+ * Date: 2021-09-27
+ * Time: 11:02 update
  */
 
 namespace DingNotice;
 
-
+use DingNotice\Contracts\HttpClientInterface;
 use GuzzleHttp\Client;
+use GuzzleHttp\RequestOptions;
 
-class HttpClient implements SendClient
+class HttpClient implements HttpClientInterface
 {
     protected $client;
     protected $config;
@@ -72,19 +73,35 @@ class HttpClient implements SendClient
      * @param $url
      * @param $params
      * @return array
-     * @author wangju 2019-05-17 20:48
+     * @author Jmiy 2021-09-27 11:15 update
      */
     public function send($params): array
     {
-        $request = $this->client->post($this->getRobotUrl(), [
-            'body' => json_encode($params),
-            'headers' => [
-                'Content-Type' => 'application/json',
-            ],
-            'verify' => $this->config['ssl_verify'] ?? true,
+        $response = $this->client->post($this->getRobotUrl(), [
+//            'body' => json_encode($params),
+//            'headers' => [
+//                'Content-Type' => 'application/json',
+//            ],
+//            'verify' => $this->config['ssl_verify'] ?? true,
+
+//            RequestOptions::BODY => json_encode($params),
+//            RequestOptions::HEADERS => [
+//                'Content-Type' => 'application/json',
+//            ],
+//            RequestOptions::VERIFY => $this->config['ssl_verify'] ?? true,
+
+//            RequestOptions::BODY => json_encode($params),
+//            RequestOptions::HEADERS => [
+//                'Content-Type' => 'application/json',
+//            ],
+//            RequestOptions::VERIFY => $this->config['ssl_verify'] ?? true,
+
+            RequestOptions::JSON => $params,
+            RequestOptions::VERIFY => $this->config['ssl_verify'] ?? true,
         ]);
 
-        $result = $request->getBody()->getContents();
+        $result = $response->getBody()->getContents();
+
         return json_decode($result, true) ?? [];
     }
 }

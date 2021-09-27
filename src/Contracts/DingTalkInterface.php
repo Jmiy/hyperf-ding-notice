@@ -2,7 +2,7 @@
 
 namespace DingNotice\Contracts;
 
-interface FactoryInterface
+interface DingTalkInterface
 {
 
     /**

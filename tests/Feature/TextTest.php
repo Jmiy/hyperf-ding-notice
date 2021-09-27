@@ -2,7 +2,7 @@
 
 namespace DingNotice\Tests\Feature;
 
-use DingNotice\SendClient;
+use DingNotice\Contracts\HttpClientInterface;
 use DingNotice\Tests\TestCase;
 
 

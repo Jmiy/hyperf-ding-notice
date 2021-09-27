@@ -2,9 +2,10 @@
 
 namespace DingNotice;
 
-use DingNotice\Contracts\FactoryInterface;
+use DingNotice\Contracts\DingTalkInterface;
+use DingNotice\Contracts\HttpClientInterface;
 
-class DingTalk implements FactoryInterface
+class DingTalk implements DingTalkInterface
 {
 
     /**
@@ -25,7 +26,7 @@ class DingTalk implements FactoryInterface
     /**
      * DingTalk constructor.
      * @param $config
-     * @param SendClient $client
+     * @param HttpClientInterface $client
      */
     public function __construct($config,$client = null)
     {

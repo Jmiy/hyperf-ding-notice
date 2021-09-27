@@ -2,7 +2,7 @@
 
 namespace DingNotice;
 
-use DingNotice\Contracts\FactoryInterface;
+use DingNotice\Contracts\DingTalkInterface;
 
 class ConfigProvider
 {
@@ -10,7 +10,7 @@ class ConfigProvider
     {
         return [
             'dependencies' => [
-                FactoryInterface::class  => DingNoticeFactory::class,
+                DingTalkInterface::class  => DingNoticeFactory::class,
             ],
             'commands' => [
             ],

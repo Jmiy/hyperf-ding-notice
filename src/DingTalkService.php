@@ -8,7 +8,7 @@ use DingNotice\Messages\Link;
 use DingNotice\Messages\Markdown;
 use DingNotice\Messages\Message;
 use DingNotice\Messages\Text;
-use GuzzleHttp\Client;
+use DingNotice\Contracts\HttpClientInterface;
 
 class DingTalkService
 {
@@ -29,7 +29,7 @@ class DingTalkService
     protected $atAll = false;
 
     /**
-     * @var SendClient
+     * @var HttpClientInterface
      */
     protected $client;
 
@@ -38,7 +38,7 @@ class DingTalkService
      * @param $config
      * @param null $client
      */
-    public function __construct($config, SendClient $client = null)
+    public function __construct($config, HttpClientInterface $client = null)
     {
         $this->config = $config;
         $this->setTextMessage('null');

@@ -3,7 +3,7 @@
 use DingNotice\DingTalk;
 
 use Hyperf\Utils\ApplicationContext;
-use DingNotice\Contracts\FactoryInterface;
+use DingNotice\Contracts\DingTalkInterface;
 
 if (!function_exists('ding')){
 
@@ -13,13 +13,13 @@ if (!function_exists('ding')){
     function ding(){
 
         $container = ApplicationContext::getContainer();
-        if (!$container->has(FactoryInterface::class)) {
+        if (!$container->has(DingTalkInterface::class)) {
             return null;
         }
 
         $arguments = func_get_args();
 
-        $dingTalk = $container->get(FactoryInterface::class);
+        $dingTalk = $container->get(DingTalkInterface::class);
 
         if (empty($arguments)) {
             return $dingTalk;

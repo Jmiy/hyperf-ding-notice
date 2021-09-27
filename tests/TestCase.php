@@ -3,7 +3,7 @@
 namespace DingNotice\Tests;
 
 use DingNotice\DingTalk;
-use DingNotice\SendClient;
+use DingNotice\Contracts\HttpClientInterface;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
@@ -38,7 +38,7 @@ abstract class TestCase extends BaseTestCase
      */
     protected function mockDingClient($client = null)
     {
-        $client = \Mockery::mock(SendClient::class);
+        $client = \Mockery::mock(HttpClientInterface::class);
         $client->shouldReceive('send')->withArgs(function ($arg) {
             $messageType = $arg['msgtype'];
 
