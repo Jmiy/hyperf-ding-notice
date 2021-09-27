@@ -83,19 +83,11 @@ class HttpClient implements HttpClientInterface
 //                'Content-Type' => 'application/json',
 //            ],
 //            'verify' => $this->config['ssl_verify'] ?? true,
-
 //            RequestOptions::BODY => json_encode($params),
 //            RequestOptions::HEADERS => [
 //                'Content-Type' => 'application/json',
 //            ],
 //            RequestOptions::VERIFY => $this->config['ssl_verify'] ?? true,
-
-//            RequestOptions::BODY => json_encode($params),
-//            RequestOptions::HEADERS => [
-//                'Content-Type' => 'application/json',
-//            ],
-//            RequestOptions::VERIFY => $this->config['ssl_verify'] ?? true,
-
             RequestOptions::JSON => $params,
             RequestOptions::VERIFY => $this->config['ssl_verify'] ?? true,
         ]);
