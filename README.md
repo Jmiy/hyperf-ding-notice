@@ -1,4 +1,4 @@
-# 钉钉推送机器人消息发送laravel扩展包
+# 钉钉推送机器人消息发送Hyperf扩展包
 
 [![Build Status](https://travis-ci.org/wowiwj/ding-notice.svg?branch=master)](https://travis-ci.org/wowiwj/ding-notice)
 [![Latest Stable Version](https://poser.pugx.org/wangju/ding-notice/v/stable)](https://packagist.org/packages/wangju/ding-notice)
