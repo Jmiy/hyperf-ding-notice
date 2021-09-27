@@ -28,7 +28,7 @@ class DingTalk implements DingTalkInterface
      * @param $config
      * @param HttpClientInterface $client
      */
-    public function __construct($config,$client = null)
+    public function __construct($config, $client = null)
     {
         $this->config = $config;
         $this->client = $client;
@@ -39,9 +39,10 @@ class DingTalk implements DingTalkInterface
      * @param string $robot
      * @return $this
      */
-    public function with($robot = 'default'){
+    public function with($robot = 'default')
+    {
         $this->robot = $robot;
-        $this->dingTalkService = new DingTalkService($this->config[$robot],$this->client);
+        $this->dingTalkService = new DingTalkService($this->config[$robot] ?? [], $this->client);
         return $this;
     }
 
@@ -50,7 +51,8 @@ class DingTalk implements DingTalkInterface
      * @param string $content
      * @return mixed
      */
-    public function text($content = ''){
+    public function text($content = '')
+    {
         return $this->dingTalkService
             ->setTextMessage($content)
             ->send();
@@ -61,9 +63,10 @@ class DingTalk implements DingTalkInterface
      * @param $text
      * @return mixed
      */
-    public function action($title, $text){
+    public function action($title, $text)
+    {
         return $this->dingTalkService
-            ->setActionCardMessage($title,$text);
+            ->setActionCardMessage($title, $text);
     }
 
     /**
@@ -71,9 +74,10 @@ class DingTalk implements DingTalkInterface
      * @param bool $atAll
      * @return $this
      */
-    public function at($mobiles = [], $atAll = false){
+    public function at($mobiles = [], $atAll = false)
+    {
         $this->dingTalkService
-            ->setAt($mobiles,$atAll);
+            ->setAt($mobiles, $atAll);
         return $this;
     }
 
@@ -84,9 +88,10 @@ class DingTalk implements DingTalkInterface
      * @param string $picUrl
      * @return mixed
      */
-    public function link($title, $text, $url, $picUrl = ''){
+    public function link($title, $text, $url, $picUrl = '')
+    {
         return $this->dingTalkService
-            ->setLinkMessage($title,$text,$url,$picUrl)
+            ->setLinkMessage($title, $text, $url, $picUrl)
             ->send();
     }
 
@@ -95,9 +100,10 @@ class DingTalk implements DingTalkInterface
      * @param $markdown
      * @return mixed
      */
-    public function markdown($title, $markdown){
+    public function markdown($title, $markdown)
+    {
         return $this->dingTalkService
-            ->setMarkdownMessage($title,$markdown)
+            ->setMarkdownMessage($title, $markdown)
             ->send();
     }
 
@@ -108,15 +114,17 @@ class DingTalk implements DingTalkInterface
      * @param int $btnOrientation
      * @return mixed
      */
-    public function actionCard($title, $markdown, $hideAvatar = 0, $btnOrientation = 0){
+    public function actionCard($title, $markdown, $hideAvatar = 0, $btnOrientation = 0)
+    {
         return $this->dingTalkService
-            ->setActionCardMessage($title,$markdown,$hideAvatar,$btnOrientation);
+            ->setActionCardMessage($title, $markdown, $hideAvatar, $btnOrientation);
     }
 
     /**
      * @return mixed
      */
-    public function feed(){
+    public function feed()
+    {
         return $this->dingTalkService
             ->setFeedCardMessage();
     }

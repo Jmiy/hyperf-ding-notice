@@ -159,7 +159,7 @@ class DingTalkService
      */
     public function send()
     {
-        if (!$this->config['enabled']) {
+        if (!isset($this->config['enabled']) || !$this->config['enabled']) {
             return false;
         }
         return $this->client->send($this->message->getBody());

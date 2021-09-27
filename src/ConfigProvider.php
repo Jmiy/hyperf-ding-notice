@@ -10,7 +10,7 @@ class ConfigProvider
     {
         return [
             'dependencies' => [
-                DingTalkInterface::class  => DingNoticeFactory::class,
+                DingTalkInterface::class => DingNoticeFactory::class,
             ],
             'commands' => [
             ],

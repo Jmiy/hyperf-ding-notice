@@ -36,8 +36,9 @@ class HttpClient implements HttpClientInterface
     /**
      *
      */
-    public function setAccessToken(){
-        $this->accessToken = $this->config['token'];
+    public function setAccessToken()
+    {
+        $this->accessToken = $this->config['token'] ?? '';
     }
 
     /**
@@ -61,7 +62,7 @@ class HttpClient implements HttpClientInterface
         $query['access_token'] = $this->accessToken;
         if (isset($this->config['secret']) && $secret = $this->config['secret']) {
             $timestamp = time() . sprintf('%03d', rand(1, 999));
-            $sign      = hash_hmac('sha256', $timestamp . "\n" . $secret, $secret, true);
+            $sign = hash_hmac('sha256', $timestamp . "\n" . $secret, $secret, true);
             $query['timestamp'] = $timestamp;
             $query['sign'] = base64_encode($sign);
         }

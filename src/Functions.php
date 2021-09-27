@@ -5,12 +5,13 @@ use DingNotice\DingTalk;
 use Hyperf\Utils\ApplicationContext;
 use DingNotice\Contracts\DingTalkInterface;
 
-if (!function_exists('ding')){
+if (!function_exists('ding')) {
 
     /**
      * @return bool|DingTalk
      */
-    function ding(){
+    function ding()
+    {
 
         $container = ApplicationContext::getContainer();
         if (!$container->has(DingTalkInterface::class)) {
